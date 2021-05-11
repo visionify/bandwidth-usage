@@ -1,7 +1,7 @@
 # Bandwidth Usage Measurement
 This repo provides an utility function that we can use to trace the bandwidth usage, memory usage, and CPU usage periodically.
 
-This functionality is useful to monitor system performance in the background, when there is other activities going on. Please share your feedback on any suggestions or improvements by contacting me at hmurari <at> visionify <dot> ai. Learn more about what we do at www.visionify.ai
+This functionality is useful to monitor system performance in the background, when there is other activities going on. 
 
 ## How to use
 * Clone this repository: 
@@ -59,4 +59,4 @@ monitor_duration_seconds = 10
 ```
 
 ## Feedback
-Please submit any issues through the github issues tab. You can also reach me directly at hmurari < at > [visionify.ai](www.visionify.ai)
+Please submit any issues through the github issues tab. You can also reach me directly at hmurari < at > [visionify.ai](www.visionify.ai). 

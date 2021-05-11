@@ -3,6 +3,26 @@ This repo provides an utility function that we can use to trace the bandwidth us
 
 This functionality is useful to monitor system performance in the background, when there is other activities going on. 
 
+# How it works
+When we do a `ifconfig` command, we see the following output for an interface:
+
+```bash
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 171.16.255.105  netmask 255.255.255.0  broadcast 172.16.249.255
+        inet6 fe80::xxxx:xxxx:xxxx:xxxx  prefixlen 64  scopeid 0x20<link>
+        ether xx:xx:xx:xx:xx:xx  txqueuelen 1000  (Ethernet)
+        RX packets 431354  bytes 171277574 (171.2 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 254150  bytes 238681292 (238.6 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+The RX bytes and Tx bytes get incremented each time there is data transfer through that interface. We use this information to calculate difference between two snapshots of the interface in order to calculate bandwidth.
+
+In Python, there is PSUTIL package which can provide us the TX and RX bytes that have gone through the interface. We will make use of this library to calculate bandwidth usage periodically. 
+
+PSUTIL also provides average CPU and MEM usage statistics, so we will make use of those too.  
+
 ## How to use
 * Clone this repository: 
 ```
